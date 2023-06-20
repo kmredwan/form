@@ -66,12 +66,12 @@
 
       form.addEventListener("submit", function (e) {
         e.preventDefault();
-        // nameError.textContent = "";
-        // emailError.textContent = "";
-        // passwordError.textContent = "";
-        // // confirmPasswordError.textContent = "";
-        // console.log(ConfirmPasswordError);
-        // console.log(passwordError);
+        nameError.textContent = "";
+        emailError.textContent = "";
+        passwordError.textContent = "";
+        // confirmPasswordError.textContent = "";
+        console.log(ConfirmPasswordError);
+        console.log(passwordError);
 
         // Validate name
         if (nameField.value.trim() === "") {
@@ -93,15 +93,15 @@
             "Password should be at lsat 8 characters.";
           e.preventDefault();
         }
-        // else if (
-        //   !/[a-z]/.test(password.value) ||
-        //   !/[a-z]/.test(password.value) ||
-        //   !/[a-z]/.test(password.value)
-        // ) {
-        //   passwordError.textContent(
-        //     "Password Should be content at least one uppercase letter, one lowercase letter, and one digit."
-        //   );
-        // }
+        else if (
+          !/[a-z]/.test(password.value) ||
+          !/[a-z]/.test(password.value) ||
+          !/[a-z]/.test(password.value)
+        ) {
+          passwordError.textContent(
+            "Password Should be content at least one uppercase letter, one lowercase letter, and one digit."
+          );
+        }
 
         // Validate confirm Password
 
@@ -109,96 +109,6 @@
           confirmPasswordError.textContent = "Password doesn't  Match";
         }
       });
-    </script>
-    <!-- <form id="myForm">
-      <div>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required />
-        <div id="nameError" class="error-message"></div>
-      </div>
-      <div>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required />
-        <div id="emailError" class="error-message"></div>
-      </div>
-      <div>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required />
-        <div id="passwordError" class="error-message"></div>
-      </div>
-      <div>
-        <label for="confirmPassword">Confirm Password:</label>
-        <input
-          type="password"
-          id="confirmPassword"
-          name="confirmPassword"
-          required
-        />
-        <div id="confirmPasswordError" class="error-message"></div>
-      </div>
-      <button type="submit">Submit</button>
-    </form>
-
-    <script>
-      const form = document.getElementById("myForm");
-      const nameField = document.getElementById("name");
-      const emailField = document.getElementById("email");
-      const passwordField = document.getElementById("password");
-      const confirmPasswordField = document.getElementById("confirmPassword");
-      const nameError = document.getElementById("nameError");
-      const emailError = document.getElementById("emailError");
-      const passwordError = document.getElementById("passwordError");
-      const confirmPasswordError = document.getElementById(
-        "confirmPasswordError"
-      );
-
-      form.addEventListener("submit", function (event) {
-        // Reset error messages
-        nameError.textContent = "";
-        emailError.textContent = "";
-        passwordError.textContent = "";
-        confirmPasswordError.textContent = "";
-
-        // Validate name field
-        if (nameField.value.trim() === "") {
-          nameError.textContent = "Name is required.";
-          event.preventDefault();
-        } else if (!/^[a-zA-Z]+$/.test(nameField.value)) {
-          nameError.textContent = "Name should only contain letters.";
-          event.preventDefault();
-        }
-
-        // Validate email field
-        if (emailField.value.trim() === "") {
-          emailError.textContent = "Email is required.";
-          event.preventDefault();
-        } else if (!/\S+@\S+\.\S+/.test(emailField.value)) {
-          emailError.textContent = "Invalid email address.";
-          event.preventDefault();
-        }
-
-        // Validate password field
-        if (passwordField.value.length < 8) {
-          passwordError.textContent =
-            "Password should be at least 8 characters long.";
-          event.preventDefault();
-        } else if (
-          !/[a-z]/.test(passwordField.value) ||
-          !/[A-Z]/.test(passwordField.value) ||
-          !/\d/.test(passwordField.value)
-        ) {
-          passwordError.textContent =
-            "Password should contain at least one uppercase letter, one lowercase letter, and one digit.";
-          event.preventDefault();
-        }
-
-        // Validate confirm password field
-        if (confirmPasswordField.value !== passwordField.value) {
-          confirmPasswordError.textContent =
-            "Confirm password should match the password.";
-          event.preventDefault();
-        }
-      });
-    </script> -->
+   
   </body>
 </html>
